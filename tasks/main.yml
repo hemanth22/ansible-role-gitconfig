@@ -1,0 +1,44 @@
+---
+# tasks file for hemanth22.gitconfig
+- name: Configure user email
+  ansible.builtin.shell: git config --global user.email '{{gituseremail}}'
+
+- name: Configure user
+  ansible.builtin.shell: git config --global user.name '{{gitusername}}'
+
+- name: Disable SSL Verification
+  ansible.builtin.shell: git config --global http.sslVerify false
+
+- name: Enable credential cache timeout
+  ansible.builtin.shell: git config --global credential.helper 'cache --timeout=3600'
+
+- name: Enable github user
+  ansible.builtin.shell: git config --global github.user '{{gitusername}}'
+
+- name: Config github token
+  ansible.builtin.shell: git config --global github.token '{{gittoken}}'
+
+- name: Config push default
+  ansible.builtin.shell: git config --global push.default simple
+
+- name: Config git status alias
+  ansible.builtin.shell: git config --global alias.s "status -s"
+
+- name: Config git log alias
+  ansible.builtin.shell: git config --global alias.lg "log --oneline --decorate --all --graph"
+
+- name: Config git log special alias
+  ansible.builtin.shell: git config --global alias.lgs "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+- name: Enable git longpaths
+  ansible.builtin.shell: git config --system core.longpaths true
+
+- name: Enable git color ui
+  ansible.builtin.shell: git config --global color.ui true
+
+- name: Enable git global list
+  ansible.builtin.shell: git config --global --list
+  register: gitlist_output
+
+- debug: 
+    var: gitlist_output.stdout_lines

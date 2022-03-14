@@ -1,0 +1,5 @@
+---
+# defaults file for hemanth22.gitconfig
+gituseremail: example@example.com
+gitusername: example
+gittoken: example

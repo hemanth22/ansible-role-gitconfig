@@ -1,5 +1,10 @@
 ---
 # tasks file for hemanth22.gitconfig
+- name: Ensure vault server is installed
+  dnf:
+    name: vault
+    state: present
+
 - name: Configure user email
   ansible.builtin.shell: git config --global user.email '{{gituseremail}}'
 
@@ -40,5 +45,5 @@
   ansible.builtin.shell: git config --global --list
   register: gitlist_output
 
-- debug: 
+- debug:
     var: gitlist_output.stdout_lines

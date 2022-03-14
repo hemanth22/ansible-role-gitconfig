@@ -2,7 +2,7 @@
 # tasks file for hemanth22.gitconfig
 - name: Ensure vault server is installed
   dnf:
-    name: vault
+    name: git
     state: present
 
 - name: Configure user email

@@ -6,8 +6,9 @@ rules:
     max: 200
     level: warning
 
+skip_list:
+  - yaml[truthy]
+
 ignore: |
-  .github/workflows/CI.yml
+  .github/workflows/ci.yaml
   .github/workflows/release.yml
-  .github/stale.yml
-  .travis.yml

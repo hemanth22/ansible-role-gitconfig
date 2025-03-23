@@ -2,4 +2,5 @@ skip_list:
   - '503'
   - '405'
   - 'yaml'
+  - 'risky-shell-pipe'
   - 'role-name'

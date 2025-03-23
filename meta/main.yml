@@ -2,14 +2,15 @@
 galaxy_info:
   role_name: gitconfig
   author: hemanth22
-  description: gitconfig
-  issue_tracker_url: https://github.com/hemanth22/ansible-role-gitconfig/issues
-  license: GPLv3
-  min_ansible_version: 2.4
+  description: To config git command with necessary configuration
+  issue_tracker_url: https://github.com/hemanth22/ansibl
+  license: GPL-3.0-only
+  min_ansible_version: 2.1
   platforms:
     - name: EL
       versions:
-        - 8
+        - "8"
+        - "9"
   galaxy_tags:
     - git
     - config

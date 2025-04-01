@@ -1,9 +1,14 @@
 ---
 # tasks file for hemanth22.gitconfig
-- name: Ensure vault server is installed
-  dnf:
+- name: Gather installed package facts
+  ansible.builtin.package_facts:
+    manager: auto
+
+- name: Ensure git commandline package is installed
+  ansible.builtin.dnf:
     name: git
     state: present
+  when: "'git' not in ansible_facts.packages"
 
 - name: Configure user email
   ansible.builtin.shell: git config --global user.email '{{gituseremail}}'

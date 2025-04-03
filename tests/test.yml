@@ -1,5 +1,8 @@
 ---
 - hosts: localhost
-  remote_user: root
+  vars:
+    gituseremail: {{ lookup('env', 'GITHUB_EMAIL') }}
+    gitusername: {{ lookup('env', 'GITHUB_USERNAME') }}
+    gittoken: {{ lookup('env', 'GITHUB_PASSWORD') }}
   roles:
     - hemanth22.gitconfig

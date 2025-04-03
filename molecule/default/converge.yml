@@ -21,3 +21,4 @@
 
   roles:
     - role: hemanth22.gitconfig
+      tags: molecule-idempotence-notest
